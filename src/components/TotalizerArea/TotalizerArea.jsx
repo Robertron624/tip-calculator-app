@@ -1,7 +1,7 @@
 import React from "react";
 import './index.scss'
 
-const TotalizerArea = ({tipAmount, total}) => {
+const TotalizerArea = ({tipAmount, total, resetFunction}) => {
     return (
         <div className="totalizers-area">
             <div className="tip-amount">
@@ -16,6 +16,7 @@ const TotalizerArea = ({tipAmount, total}) => {
                 </p>
                 <span className="amount-number">${total}</span>
             </div>
+            <button onClick={resetFunction} className="reset">Reset</button>
         </div>
     );
 };

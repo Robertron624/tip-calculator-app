@@ -11,25 +11,36 @@ function App() {
     const [tipAmount, setTipAmount] = useState(0.0);
     const [total, setTotal] = useState(0.0);
     const [discount, setDiscount] = useState(0.05);
+    const [numberOfPersons, setNumberOfPersons] = useState(0);
+
+    const resetFunction = () => {
+        setBill(0);
+        setTipAmount(0);
+        setTotal(0);
+        setDiscount(0.05);
+        setNumberOfPersons(0);
+    };
 
     return (
         <div className="App">
             <h1>Splitter</h1>
             <div className="main-container">
-                <div className="input-area">
-                    <span className="section-title">Bill</span>
-                    <div className="total-screen">
-                        <span>$</span>
-                        <span className="bill-value">{bill}</span>
+                <div className="upper-section">
+                    <div className="input-area">
+                        <span className="section-title">Bill</span>
+                        <div className="total-screen">
+                            <span>$</span>
+                            <span className="bill-value">{bill}</span>
+                        </div>
                     </div>
+                    <PercentagesArea
+                        setDiscount={setDiscount}
+                        discount={discount}
+                        percentageOptions={percentageOptions}
+                    />
+                    <PeopleArea setNumberOfPersons={setNumberOfPersons} />
                 </div>
-                <PercentagesArea
-                    setDiscount={setDiscount}
-                    discount={discount}
-                    percentageOptions={percentageOptions}
-                />
-                <PeopleArea/>
-                <TotalizerArea total={total} tipAmount={tipAmount} />
+                <TotalizerArea resetFunction={resetFunction} total={total} tipAmount={tipAmount} />
             </div>
         </div>
     );
