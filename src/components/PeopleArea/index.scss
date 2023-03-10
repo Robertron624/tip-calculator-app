@@ -1,0 +1,35 @@
+$very-dark-cyan: hsl(183, 100%, 15%);
+$dark-grayish-cyan: hsl(186, 14%, 43%);
+$very-light-grayish-cyan: hsl(189, 41%, 97%);
+$strong-cyan: hsl(172, 67%, 45%);
+
+.people-area {
+
+    margin-top: 1rem;
+
+    .people-input {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: .5rem;
+        position: relative;
+
+        img {
+            position: absolute;
+            left: 3%;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.5rem 0.5rem;
+            text-align: right;
+            border-color: transparent;
+            border-radius: 5px;
+            background-color: $very-light-grayish-cyan;
+            color: $dark-grayish-cyan;
+            font-size: 1rem;
+            font-family: 'Space Mono', sans-serif;
+        }
+
+    }
+}

@@ -36,11 +36,23 @@ $white: hsl(0, 0%, 100%);
   .main-container {
     border-radius: 24px;
     background: $white;
+    padding: 2rem 1.5rem;
+    text-align: left;
+
+    .section-title {
+      color: $dark-grayish-cyan;
+    }
 
     .input-area {
-      span {
-        color: $dark-grayish-cyan;
+      .total-screen {
+        display: flex;
+        justify-content: space-between;
+        background-color: $very-light-grayish-cyan;
+        padding: 0.51rem 0.6rem;
+        margin-top: .5rem;
+        border-radius: 10px;
       }
+
     }
 
   }

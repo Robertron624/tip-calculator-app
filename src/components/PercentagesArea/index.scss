@@ -1,0 +1,43 @@
+$very-dark-cyan: hsl(183, 100%, 15%);
+$very-light-grayish-cyan: hsl(189, 41%, 97%);
+$strong-cyan: hsl(172, 67%, 45%);
+
+.percentage-section {
+
+    margin-top: 1.5rem;
+
+    .section-title{
+        font-size: 14px;
+        margin-bottom: .5rem;
+    }
+
+    .percentage-buttons {
+        margin-top: .5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        column-gap: 1rem;
+        row-gap: 1rem;
+
+        button {
+            background-color: $very-dark-cyan;
+            color: $very-light-grayish-cyan;
+            font-family: 'Space Mono',sans-serif;
+            padding: .5rem 0;
+            font-size: 1rem;
+            border-radius: 6px;
+            border-color: transparent;
+        }
+
+        .custom-button {
+            text-transform: capitalize;
+            background: $very-light-grayish-cyan;
+            color: $very-dark-cyan;
+        }
+
+        .selected {
+            background-color: $strong-cyan;
+            color: $very-dark-cyan;
+        }
+    }
+}
