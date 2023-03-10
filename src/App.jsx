@@ -30,7 +30,7 @@ function App() {
                         <span className="section-title">Bill</span>
                         <div className="total-screen">
                             <span>$</span>
-                            <span className="bill-value">{bill}</span>
+                            <input placeholder="0" type="text" className="bill-value" />
                         </div>
                     </div>
                     <PercentagesArea

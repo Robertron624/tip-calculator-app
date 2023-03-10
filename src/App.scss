@@ -44,6 +44,7 @@ $white: hsl(0, 0%, 100%);
     padding: 2rem 1.5rem;
     text-align: left;
 
+    .bill-value,
     .section-title {
       color: $dark-grayish-cyan;
     }
@@ -52,10 +53,33 @@ $white: hsl(0, 0%, 100%);
       .total-screen {
         display: flex;
         justify-content: space-between;
-        background-color: $very-light-grayish-cyan;
-        padding: 0.51rem 0.6rem;
-        margin-top: .5rem;
-        border-radius: 10px;
+        align-items: center;
+        position: relative;
+
+        & > span {
+          position: absolute;
+          color: $light-grayish-cyan;
+          font-size: 18px;
+          left: 4%;
+          top: 27%;
+        }
+
+        .bill-value {
+          color: $very-dark-cyan;
+          width: 100%;
+          background-color: $very-light-grayish-cyan;
+          padding: 0.51rem 0.6rem;
+          margin-top: .5rem;
+          border-radius: 10px;
+          text-align: right;
+          border-color: transparent;
+          font-family: 'Space Mono', sans-serif;
+          font-size: 18px;
+
+          &::placeholder {
+            color: $light-grayish-cyan;
+          }
+        }
       }
     }
 
