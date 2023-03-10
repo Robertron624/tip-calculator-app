@@ -12,6 +12,11 @@ $light-grayish-cyan: hsl(185, 41%, 84%);
 $very-light-grayish-cyan: hsl(189, 41%, 97%);
 $white: hsl(0, 0%, 100%);
 
+@mixin large {
+  @media only screen and (min-width: 1440px) {
+    @content;
+  }
+}
 
 #root {
   max-width: 1280px;
@@ -52,9 +57,22 @@ $white: hsl(0, 0%, 100%);
         margin-top: .5rem;
         border-radius: 10px;
       }
-
     }
 
+    @include large {
+      display: flex;
+      width: 100%;
+      gap: 2rem;
+
+      & > div {
+        width: 50%;
+      }
+    }
   }
+
+  @include large {
+    max-width: 50rem;
+    margin: 0 auto;
+  } 
 
 }

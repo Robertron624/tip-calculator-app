@@ -23,3 +23,8 @@ body {
   background: hsl(185, 41%, 84%)
 }
 
+@media screen and (min-width: 768px) {
+  #root {
+    margin: 0 auto;
+  }
+}
