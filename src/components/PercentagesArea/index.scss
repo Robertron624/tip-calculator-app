@@ -2,6 +2,8 @@ $very-dark-cyan: hsl(183, 100%, 15%);
 $very-light-grayish-cyan: hsl(189, 41%, 97%);
 $strong-cyan: hsl(172, 67%, 45%);
 
+$hover-cyan: rgb(175,230,223);
+
 @mixin large {
     @media only screen and (min-width: 1440px) {
         @content;
@@ -33,6 +35,11 @@ $strong-cyan: hsl(172, 67%, 45%);
             border-radius: 6px;
             border-color: transparent;
             cursor: pointer;
+        }
+
+        .number-percentage:hover {
+            background-color: $hover-cyan;
+            color: $very-dark-cyan;
         }
 
         .custom-button {
