@@ -22,7 +22,7 @@ function App() {
     };
 
     const hanleBill = (e) => {
-        setBill(e.target.value);
+        setBill(Number(e.target.value));
     };
 
     return (

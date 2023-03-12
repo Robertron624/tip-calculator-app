@@ -8,10 +8,9 @@ const TotalizerArea = ({
     bill,
     discount,
 }) => {
-    // console.log("bill -> " + bill)
-    // console.log("tip amount -> " + tipAmount)
-    // console.log("Tip ammount x bill -> " + bill * tipAmount)
-    // console.log(numberOfPersons);
+    console.log("bill -> " + bill)
+    console.log("type of bill -> ",typeof bill)
+    console.log(numberOfPersons);
     return (
         <div className="totalizers-area">
             <div className="values">
@@ -20,7 +19,10 @@ const TotalizerArea = ({
                         Tip Amount <span>/ person</span>
                     </p>
                     <span className="amount-number">
-                        ${(bill * discount) / (numberOfPersons || 1) || "0"}
+                        $
+                        {((bill * discount) / (numberOfPersons || 1)).toFixed(
+                            2
+                        ) || "0"}
                     </span>
                 </div>
                 <div className="total">
@@ -29,8 +31,8 @@ const TotalizerArea = ({
                     </p>
                     <span className="amount-number">
                         $
-                        {(parseInt(bill) + bill * discount) /
-                            (numberOfPersons || 1) || "0"}
+                        {((parseInt(bill) + bill * discount) /
+                            (numberOfPersons || 1)).toFixed(2)|| "0"}
                     </span>
                 </div>
             </div>
