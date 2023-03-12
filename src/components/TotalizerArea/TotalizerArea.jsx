@@ -8,9 +8,12 @@ const TotalizerArea = ({
     bill,
     discount,
 }) => {
-    console.log("bill -> " + bill)
-    console.log("type of bill -> ",typeof bill)
-    console.log(numberOfPersons);
+    // console.log("bill -> " + bill)
+    // console.log("type of bill -> ",typeof bill)
+    // console.log(numberOfPersons);
+
+    const isBillZero = bill == 0
+
     return (
         <div className="totalizers-area">
             <div className="values">
@@ -36,7 +39,7 @@ const TotalizerArea = ({
                     </span>
                 </div>
             </div>
-            <button onClick={resetFunction} disabled={true} className="reset">
+            <button onClick={resetFunction} disabled={isBillZero} className="reset">
                 Reset
             </button>
         </div>

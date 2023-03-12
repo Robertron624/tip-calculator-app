@@ -73,9 +73,11 @@ $white: hsl(0, 0%, 100%);
         border-color: transparent;
         padding: .5rem 0;
         text-transform: uppercase;
+        cursor: pointer;
 
         &:disabled {
             background-color: $dark-grayish-cyan;
+            cursor: not-allowed;
         }
 
         @include large {
