@@ -6,9 +6,6 @@ const PeopleArea = ({ numberOfPersons, setNumberOfPersons }) => {
     const [ peopleError, setPeopleError ] = useState(false);
 
     function handleNumberOfPersons(e) {
-        console.log("event target -> ", e.target.value)
-        console.log("is event equals to empty string -> ", e.target.value == '')
-
         if(e.target.value == '') {
             setPeopleError(true);
         }
