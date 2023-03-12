@@ -1,14 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import "./index.scss";
 
 const PeopleArea = ({ numberOfPersons, setNumberOfPersons }) => {
+
+    const [ peopleError, setPeopleError ] = useState(false);
+
     function handleNumberOfPersons(e) {
+        console.log("event target -> ", e.target.value)
+        console.log("is event equals to empty string -> ", e.target.value == '')
+
+        if(e.target.value == '') {
+            setPeopleError(true);
+        }
+        else{
+            setPeopleError(false);
+        }
+
         setNumberOfPersons(parseInt(e.target.value));
     }
 
     return (
         <div className="people-area">
-            <span className="section-title">Number of People</span>
+            <div className="title-error">
+                <span className="section-title">Number of People</span>
+                {peopleError && (<span className="blank-error">C'ant be zero</span>)}
+            </div> 
             <div className="people-input">
                 <img src="icon-person.svg" alt="person icon" />
                 <input

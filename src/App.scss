@@ -76,8 +76,9 @@ $white: hsl(0, 0%, 100%);
           font-family: 'Space Mono', sans-serif;
           font-size: 18px;
 
-          &:focus {
-            border: 1px solid blue;
+          &:focus-visible {
+            outline-color:  $strong-cyan;
+            border: none;
           }
 
           &::placeholder {

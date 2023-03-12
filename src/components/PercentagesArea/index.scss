@@ -58,8 +58,8 @@ $hover-cyan: rgb(175,230,223);
             border-radius: 6px;
             border-color: $strong-cyan;
 
-            &:focus {
-                border-color: $strong-cyan;
+            &:focus-visible {
+                outline-color: $strong-cyan;
             }
         }
 

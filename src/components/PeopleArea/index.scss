@@ -4,9 +4,21 @@ $very-light-grayish-cyan: hsl(189, 41%, 97%);
 $strong-cyan: hsl(172, 67%, 45%);
 $light-grayish-cyan: hsl(185, 41%, 84%);
 
+$error-color: rgb(201,121,99);
+
 .people-area {
 
     margin-top: 1rem;
+
+    .title-error {
+        display: flex;
+        justify-content: space-between;
+
+        .blank-error {
+            color: $error-color;
+            font-size: 14px;
+        }
+    }
 
     .people-input {
         display: flex;
