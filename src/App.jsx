@@ -35,6 +35,7 @@ function App() {
                         <div className="total-screen">
                             <span>$</span>
                             <input
+                            value={bill}
                                 onChange={hanleBill}
                                 placeholder="0"
                                 type="text"
@@ -47,7 +48,7 @@ function App() {
                         discount={discount}
                         percentageOptions={percentageOptions}
                     />
-                    <PeopleArea setNumberOfPersons={setNumberOfPersons} />
+                    <PeopleArea numberOfPersons={numberOfPersons} setNumberOfPersons={setNumberOfPersons} />
                 </div>
                 <TotalizerArea
                     numberOfPersons={numberOfPersons}
