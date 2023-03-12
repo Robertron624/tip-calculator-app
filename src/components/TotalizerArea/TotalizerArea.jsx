@@ -1,7 +1,17 @@
 import React from "react";
-import './index.scss'
+import "./index.scss";
 
-const TotalizerArea = ({tipAmount, total, resetFunction}) => {
+const TotalizerArea = ({
+    numberOfPersons,
+    total,
+    resetFunction,
+    bill,
+    discount,
+}) => {
+    // console.log("bill -> " + bill)
+    // console.log("tip amount -> " + tipAmount)
+    // console.log("Tip ammount x bill -> " + bill * tipAmount)
+    // console.log(numberOfPersons);
     return (
         <div className="totalizers-area">
             <div className="values">
@@ -9,16 +19,24 @@ const TotalizerArea = ({tipAmount, total, resetFunction}) => {
                     <p>
                         Tip Amount <span>/ person</span>
                     </p>
-                    <span className="amount-number">${tipAmount}</span>
+                    <span className="amount-number">
+                        ${(bill * discount) / (numberOfPersons || 1) || "0"}
+                    </span>
                 </div>
                 <div className="total">
                     <p>
                         Total <span>/ person</span>
                     </p>
-                    <span className="amount-number">${total}</span>
+                    <span className="amount-number">
+                        $
+                        {(parseInt(bill) + bill * discount) /
+                            (numberOfPersons || 1) || "0"}
+                    </span>
                 </div>
             </div>
-            <button onClick={resetFunction} disabled={true} className="reset">Reset</button>
+            <button onClick={resetFunction} disabled={true} className="reset">
+                Reset
+            </button>
         </div>
     );
 };

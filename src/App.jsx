@@ -21,6 +21,10 @@ function App() {
         setNumberOfPersons(0);
     };
 
+    const hanleBill = (e) => {
+        setBill(e.target.value);
+    };
+
     return (
         <div className="App">
             <h1>Splitter</h1>
@@ -30,7 +34,12 @@ function App() {
                         <span className="section-title">Bill</span>
                         <div className="total-screen">
                             <span>$</span>
-                            <input placeholder="0" type="text" className="bill-value" />
+                            <input
+                                onChange={hanleBill}
+                                placeholder="0"
+                                type="text"
+                                className="bill-value"
+                            />
                         </div>
                     </div>
                     <PercentagesArea
@@ -40,7 +49,14 @@ function App() {
                     />
                     <PeopleArea setNumberOfPersons={setNumberOfPersons} />
                 </div>
-                <TotalizerArea resetFunction={resetFunction} total={total} tipAmount={tipAmount} />
+                <TotalizerArea
+                    numberOfPersons={numberOfPersons}
+                    bill={bill}
+                    discount={discount}
+                    resetFunction={resetFunction}
+                    total={total}
+                    tipAmount={tipAmount}
+                />
             </div>
         </div>
     );
