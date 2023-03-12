@@ -25,12 +25,13 @@ Users should be able to:
 - Calculate the correct tip and total cost of the bill per person
 
 ### Screenshot
+![image](https://user-images.githubusercontent.com/72587880/224577474-5226ddf3-1a8a-4764-ad4a-3aca91227a21.png)
 
 
 ### Links
 
 - Solution URL: [Solution URL](https://github.com/Robertron624/tip-calculator-app)
-- Live Site URL: [Live site URL](https://your-live-site-url.com)
+- Live Site URL: [Live site URL](https://gleeful-jelly-a5a2e7.netlify.app/)
 
 ## My process
 
