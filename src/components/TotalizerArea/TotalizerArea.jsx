@@ -8,9 +8,6 @@ const TotalizerArea = ({
     bill,
     discount,
 }) => {
-    // console.log("bill -> " + bill)
-    // console.log("type of bill -> ",typeof bill)
-    // console.log(numberOfPersons);
 
     const isBillZero = bill == 0
 

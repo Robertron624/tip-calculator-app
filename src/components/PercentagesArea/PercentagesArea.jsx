@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "./index.scss";
 
-const PercentagesArea = ({ percentageOptions, discount, setDiscount }) => {
-    const [customDiscountOpen, setCustomDiscountOpen] = useState(false);
+const PercentagesArea = ({ percentageOptions, discount, setDiscount, customDiscountOpen, setCustomDiscountOpen }) => {
+    // const [customDiscountOpen, setCustomDiscountOpen] = useState(false);
     function handleClick(e) {
         setDiscount(e.target.value);
     }

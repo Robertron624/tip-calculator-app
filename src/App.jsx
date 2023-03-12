@@ -13,12 +13,15 @@ function App() {
     const [discount, setDiscount] = useState(0.05);
     const [numberOfPersons, setNumberOfPersons] = useState(0);
 
+    const [customDiscountOpen, setCustomDiscountOpen] = useState(false)
+
     const resetFunction = () => {
         setBill(0);
         setTipAmount(0);
         setTotal(0);
         setDiscount(0.05);
         setNumberOfPersons(0);
+        setCustomDiscountOpen(false);
     };
 
     const hanleBill = (e) => {
@@ -44,6 +47,8 @@ function App() {
                         </div>
                     </div>
                     <PercentagesArea
+                    customDiscountOpen={customDiscountOpen}
+                    setCustomDiscountOpen={setCustomDiscountOpen}
                         setDiscount={setDiscount}
                         discount={discount}
                         percentageOptions={percentageOptions}
