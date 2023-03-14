@@ -2,6 +2,8 @@ $very-dark-cyan: hsl(183, 100%, 15%);
 $very-light-grayish-cyan: hsl(189, 41%, 97%);
 $strong-cyan: hsl(172, 67%, 45%);
 
+$hover-cyan: rgb(175,230,223);
+
 @mixin large {
     @media only screen and (min-width: 800px) {
         @content;
@@ -35,10 +37,30 @@ $strong-cyan: hsl(172, 67%, 45%);
             cursor: pointer;
         }
 
+        .number-percentage:hover {
+            background-color: $hover-cyan;
+            color: $very-dark-cyan;
+        }
+
         .custom-button {
             text-transform: capitalize;
             background: $very-light-grayish-cyan;
             color: $very-dark-cyan;
+        }
+
+        .custom-input {
+            background: $very-light-grayish-cyan;
+            color: $very-dark-cyan;
+            font-family: 'Space Mono', sans-serif;
+            text-align: right;
+            font-size: 1.2rem;
+            max-width: 6.667rem;
+            border-radius: 6px;
+            border-color: $strong-cyan;
+
+            &:focus-visible {
+                outline-color: $strong-cyan;
+            }
         }
 
         .selected {

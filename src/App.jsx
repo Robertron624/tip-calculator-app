@@ -13,12 +13,19 @@ function App() {
     const [discount, setDiscount] = useState(0.05);
     const [numberOfPersons, setNumberOfPersons] = useState(0);
 
+    const [customDiscountOpen, setCustomDiscountOpen] = useState(false)
+
     const resetFunction = () => {
         setBill(0);
         setTipAmount(0);
         setTotal(0);
         setDiscount(0.05);
         setNumberOfPersons(0);
+        setCustomDiscountOpen(false);
+    };
+
+    const hanleBill = (e) => {
+        setBill(Number(e.target.value));
     };
 
     return (
@@ -30,17 +37,32 @@ function App() {
                         <span className="section-title">Bill</span>
                         <div className="total-screen">
                             <span>$</span>
-                            <input placeholder="0" type="text" className="bill-value" />
+                            <input
+                            value={bill}
+                                onChange={hanleBill}
+                                placeholder="0"
+                                type="text"
+                                className="bill-value"
+                            />
                         </div>
                     </div>
                     <PercentagesArea
+                    customDiscountOpen={customDiscountOpen}
+                    setCustomDiscountOpen={setCustomDiscountOpen}
                         setDiscount={setDiscount}
                         discount={discount}
                         percentageOptions={percentageOptions}
                     />
-                    <PeopleArea setNumberOfPersons={setNumberOfPersons} />
+                    <PeopleArea numberOfPersons={numberOfPersons} setNumberOfPersons={setNumberOfPersons} />
                 </div>
-                <TotalizerArea resetFunction={resetFunction} total={total} tipAmount={tipAmount} />
+                <TotalizerArea
+                    numberOfPersons={numberOfPersons}
+                    bill={bill}
+                    discount={discount}
+                    resetFunction={resetFunction}
+                    total={total}
+                    tipAmount={tipAmount}
+                />
             </div>
         </div>
     );

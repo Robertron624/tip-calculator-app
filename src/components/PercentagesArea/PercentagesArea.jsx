@@ -1,12 +1,16 @@
 import React from "react";
 import "./index.scss";
 
-const PercentagesArea = ({ percentageOptions, discount, setDiscount }) => {
+const PercentagesArea = ({ percentageOptions, discount, setDiscount, customDiscountOpen, setCustomDiscountOpen }) => {
+    function handleClick(e) {
+        setDiscount(e.target.value);
+    }
 
-  function handleClick(e){
-    setDiscount(e.target.value);
-  }
+    function handleCustomDiscount(e) {
+        let discountString = e.target.value;
 
+        setDiscount(Number(discountString) / 100);
+    }
 
     return (
         <div className="percentage-section">
@@ -22,10 +26,26 @@ const PercentagesArea = ({ percentageOptions, discount, setDiscount }) => {
                             key={i}
                             value={percentage}
                         >{`${percentage * 100}%`}</button>
-                    ) : (
-                        <button className="custom-button" key={i}>
+                    ) : !customDiscountOpen ? (
+                        <button
+                            onClick={() =>
+                                setCustomDiscountOpen(
+                                    (customDiscountOpen) => !customDiscountOpen
+                                )
+                            }
+                            className="custom-button"
+                            key={i}
+                        >
                             {percentage}
                         </button>
+                    ) : (
+                        <input
+                            className="custom-input"
+                            key={i}
+                            type="text"
+                            placeholder="0"
+                            onChange={handleCustomDiscount}
+                        />
                     );
                 })}
             </div>
