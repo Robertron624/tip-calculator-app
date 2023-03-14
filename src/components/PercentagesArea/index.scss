@@ -3,7 +3,7 @@ $very-light-grayish-cyan: hsl(189, 41%, 97%);
 $strong-cyan: hsl(172, 67%, 45%);
 
 @mixin large {
-    @media only screen and (min-width: 1440px) {
+    @media only screen and (min-width: 800px) {
         @content;
     }
 }

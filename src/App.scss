@@ -13,7 +13,7 @@ $very-light-grayish-cyan: hsl(189, 41%, 97%);
 $white: hsl(0, 0%, 100%);
 
 @mixin large {
-  @media only screen and (min-width: 1440px) {
+  @media only screen and (min-width: 800px) {
     @content;
   }
 }
@@ -24,6 +24,13 @@ $white: hsl(0, 0%, 100%);
   padding: 2rem;
   text-align: center;
   padding: 0;
+
+  @include large {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
 }
 
 .App {
@@ -36,6 +43,10 @@ $white: hsl(0, 0%, 100%);
     background-color: $light-grayish-cyan;
     word-break: break-all;
     letter-spacing: 8px;
+
+    @include large {
+      padding: 0rem 21.5rem 2rem 21.5rem;
+    }
   }
 
   .main-container {
@@ -95,7 +106,7 @@ $white: hsl(0, 0%, 100%);
   }
 
   @include large {
-    max-width: 50rem;
+    width: 50rem;
     margin: 0 auto;
   } 
 

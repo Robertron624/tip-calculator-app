@@ -20,7 +20,8 @@ body {
 }
 
 body {
-  background: hsl(185, 41%, 84%)
+  background: hsl(185, 41%, 84%);
+  height: 100vh;
 }
 
 @media screen and (min-width: 768px) {
